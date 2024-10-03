@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import List from './components/List';
+import List from './components/ListItems/List';
 
 function App() {
 	const dummyList = [
