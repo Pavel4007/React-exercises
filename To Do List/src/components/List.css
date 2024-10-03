@@ -1,0 +1,24 @@
+.list {
+    background-color: #aaa;
+    max-width: 800px;
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.list .list__title {
+    color: orange;
+    margin-bottom: 15px;
+}
+
+.list li {
+    list-style: none;
+    padding: 5px;
+    line-height: 1.4;
+}
+
+.list li + li {
+    margin-top: 5px;
+    border-top: 1px solid #000;
+}
