@@ -12,6 +12,11 @@
     margin-bottom: 15px;
 }
 
+.list .list__title-alt {
+    text-align: center;
+    color: red;
+}
+
 .list li {
     list-style: none;
     padding: 5px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import List from './components/ListItems/List';
+import NewItem from './components/NewItem/NewItem';
 
 function App() {
 	const dummyList = [
@@ -24,8 +25,13 @@ function App() {
 		}
 	]
 
+	function addNewItem(...itemProps) {
+		
+	}
+
 	return (
 		<div className="App">
+			<NewItem addItem={addNewItem} />
 			<List items={dummyList}/>
 		</div>
 	);
