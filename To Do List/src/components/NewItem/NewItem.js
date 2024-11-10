@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import './NewItem.css';
 
 
 function NewItem(props) {
-// console.log(props);
-    function handleClick() {
-        const name = document.getElementById('product').value;
-        const quantity = document.getElementById('quantity').value;
-        const price = document.getElementById('price').value;
 
-        props.addItem(name, quantity, price);
+    const [name, setName] = useState('');
+    const [price, setPrice] = useState(0);
+    const [quantity, setQuantity] = useState(1);
+
+    function handleClick() {
+
+        props.addItem(
+            {
+                title: name,
+                price: price,
+                quantity: quantity
+            }
+        );
+
+        setName('');
+        setPrice(0);
+        setQuantity(1);
     }
 
     return (
@@ -23,6 +34,8 @@ function NewItem(props) {
                     id="product"
                     type="text"
                     name="product"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                 />
             </div>
 
@@ -33,7 +46,8 @@ function NewItem(props) {
                     id="quantity"
                     name="quantity"
                     type="number"
-                    defaultValue="1"
+                    value={quantity}
+                    onChange={(e) => setQuantity(Number(e.target.value))}
                 />
             </div>
 
@@ -44,7 +58,8 @@ function NewItem(props) {
                     id="price"
                     name="price"
                     type="number"
-                    defaultValue="0.00"
+                    value={price}
+                    onChange={(e) => setPrice(Number(e.target.value))}
                 />
             </div>
 

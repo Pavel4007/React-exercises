@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import './List.css';
 import ListItem from "./ListItem";
 
-function List(props) {
-    const [items, setItems] = useState(props.items);
-
-    const removeItem = (idToRemove) => {
-        const newItems = items.filter(item => item.id !== idToRemove);
-        setItems(newItems);
-    };
+const List = ({ items, removeItem }) => {
 
     return (
         <div className="list">
@@ -18,9 +12,9 @@ function List(props) {
                 <h2 className="list__title-alt">Please add products!</h2>        
                 ) : (
                     <ul>
-                        { items.map(item => (
+                        { items.map((item,index) => (
                             <ListItem 
-                                key={item.id} 
+                                key={index} 
                                 item={item} 
                                 removeItem={removeItem} 
                             />
