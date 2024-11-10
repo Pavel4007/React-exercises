@@ -10,6 +10,7 @@ function ListItem({item, removeItem}) {
                 <img    
                     src={trashIcon}
                     alt="trash icon"
+                    title="Remove item"
                 />
             </button>
 
